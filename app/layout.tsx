@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { Bubblegum_Sans, Roboto } from "next/font/google";
+import { ToasterProvider } from "@/providers/ToasterProvider.tsx";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+	weight: "400",
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-roboto",
+});
+const bubblegum = Bubblegum_Sans({
+	weight: "400",
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-bubblegum",
+});
 
 export const metadata: Metadata = {
 	title: "pdfpowerpost",
@@ -16,7 +28,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>{children}</body>
+			<body className={`${bubblegum.variable} ${roboto.variable}`}>
+				<ToasterProvider />
+				{children}
+			</body>
 		</html>
 	);
 }
