@@ -1,4 +1,4 @@
-import { OurFileRouter } from "@/app/api/uploadthing/core.js";
+import { OurFileRouter } from "@/app/api/uploadthing/core.ts";
 import {
 	generateUploadButton,
 	generateUploadDropzone,
